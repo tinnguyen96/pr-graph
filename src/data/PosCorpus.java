@@ -102,6 +102,14 @@ public class PosCorpus extends AbstractCorpus {
 	private void loadUniversalTagMap(String univTagPath) throws IOException	{
 		System.out.println("Univ Tag path " + univTagPath);
 
+		File dirPath = new File("/home/gridsan/tdn/pr-graph/data/univmap/");
+		//List of all files and directories
+		String contents[] = dirPath.list();
+		System.out.println("List of files and directories in the specified directory:");
+		for(int i=0; i<contents.length; i++) {
+		 System.out.println(contents[i]);
+		}
+
 		File tempFile = new File(univTagPath);
 		boolean exists = tempFile.exists();
 		System.out.println("Does univTag file exist? " + exists);
