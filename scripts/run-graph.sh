@@ -11,4 +11,4 @@ java -cp $CLASSPATH -Xmx8000m programs.TestPosGraphBuilder  \
 -ngram-path "$WDIR/data/graph/temp-$lang-60nn.idx" \
 -lang-name "$lname" \
 -graph-path "$WDIR/data/graph/temp-$lang-60nn.grph" \
-#-encoding "LATIN1"
+-encoding "LATIN1"
