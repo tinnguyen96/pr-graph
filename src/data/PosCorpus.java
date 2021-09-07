@@ -100,6 +100,10 @@ public class PosCorpus extends AbstractCorpus {
 	private void loadUniversalTagMap(String univTagPath) throws IOException	{
 		System.out.println("Univ Tag path " + univTagPath);
 
+		File tempFile = new File(univTagPath);
+		boolean exists = tempFile.exists();
+		System.out.println("Does univTag file exist? " + exists);
+
 		utag2index = new TObjectIntHashMap<String>();
 		for (int i = 0; i < UniversalTagSet.tags.length; i++) { 
 			utag2index.put(UniversalTagSet.tags[i], i);
