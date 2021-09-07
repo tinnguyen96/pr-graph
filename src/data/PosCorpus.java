@@ -126,7 +126,7 @@ public class PosCorpus extends AbstractCorpus {
 		BufferedReader reader = new BufferedReader(new FileReader(univTagPath));
 		while ((currLine = reader.readLine()) != null) {	
 			String[] info = currLine.split("\t");
-			System.out.println(info)
+			System.out.println(info);
 			String t = info[0].trim();
 			String ut = info[1].trim();
 			if (!tag2index.contains(t) || !utag2index.contains(ut)) {
