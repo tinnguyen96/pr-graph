@@ -82,7 +82,8 @@ public class PosCorpus extends AbstractCorpus {
 		for (String corpusFileName : files) {
 			String currLine;
 			BufferedReader reader = new BufferedReader(new FileReader(
-					corpusFileName));	
+					corpusFileName));
+			System.out.println("corpusFileName: " + corpusFileName);
 			while ((currLine = reader.readLine()) != null) {			
 				currLine = reader.readLine();
 				if(currLine == null) break;
