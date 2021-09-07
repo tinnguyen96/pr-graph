@@ -7,7 +7,7 @@ umap=$3
 
 java -cp $CLASSPATH -Xmx8000m programs.TestPosGraphBuilder  \
 -data-path "$WDIR/data/langs/$lang/$lname.train,$WDIR/data/langs/$lang/$lname.test" \
--sufix-path "$WDIR/data/suffix.dict" \
+-suffix-path "$WDIR/data/suffix.dict" \
 -umap-path "$WDIR/data/univmap/$lang-$umap.map" \
 -num-neighbors 60 \
 -ngram-path "$WDIR/data/graph/temp-$lang-60nn.idx" \
