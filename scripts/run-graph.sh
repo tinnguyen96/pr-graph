@@ -5,17 +5,11 @@ lang=$1
 lname=$2
 umap=$3
 
-echo $lang
-echo $lname
-echo $umap
-
-umapPath="$WDIR/data/univmap/$lang-$umap.map"
-echo $umapPath
-cat $umapPath
-
 java -cp $CLASSPATH -Xmx8000m programs.TestPosGraphBuilder  \
 -data-path "$WDIR/data/langs/$lang/$lname.train,$WDIR/data/langs/$lang/$lname.test" \
+-sufix-path "$WDIR/data/suffix.dict" \
 -umap-path "$WDIR/data/univmap/$lang-$umap.map" \
+-num-neighbors 60 \
 -ngram-path "$WDIR/data/graph/temp-$lang-60nn.idx" \
 -lang-name "$lname" \
 -graph-path "$WDIR/data/graph/temp-$lang-60nn.grph" \
