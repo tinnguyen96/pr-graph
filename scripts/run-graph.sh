@@ -10,7 +10,7 @@ java -cp $CLASSPATH -Xmx8000m programs.TestPosGraphBuilder  \
 -suffix-path "$WDIR/data/suffix.dict" \
 -umap-path "$WDIR/data/univmap/$lang-$umap.map" \
 -num-neighbors 60 \
--ngram-path "$WDIR/data/graph/temp-$lang-60nn.idx" \
+-ngram-path "$WDIR/data/graph/temp-$lang-$lname-$umap-60nn.idx" \
 -lang-name "$lname" \
--graph-path "$WDIR/data/graph/temp-$lang-60nn.grph" \
+-graph-path "$WDIR/data/graph/temp-$lang-$lname-$umap-60nn.grph" \
 -encoding "LATIN1"
