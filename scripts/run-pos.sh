@@ -1,9 +1,13 @@
-export WDIR="/home/luheng/Working/pr-graph"
-export CLASSPATH="$WDIR/bin/:$WDIR/libs/optimization-2010.11.jar:$WDIR/libs/trove-2.0.2.jar:$WDIR/libs/args4j-2.0.10.jar"
+#!/bin/bash  
+#SBATCH --exclusive # core count
+#SBATCH -o logs/run-pos.out
 
-lang=$1
-lname=$2
-umap=$3
+WDIR="/home/gridsan/tdn/pr-graph"
+CLASSPATH="$WDIR/bin/:$WDIR/libs/optimization-2010.11.jar:$WDIR/libs/trove-2.0.2.jar:$WDIR/libs/args4j-2.0.10.jar"
+
+lang="english"
+lname="english-ptb"
+umap="ptb"
 gstr=1
 sfid=0
 lbs=100
@@ -25,7 +29,7 @@ java -cp $CLASSPATH -Xmx8000m programs.TestHighOrderPos -num-labels $lbs \
 -estep-stop 0.01 \
 -mstep-stop 0.00001 \
 -num-em-iters 20 \
--num-threads 2 \
--output-path "./output/$lang-f$sfid-100lb-gstr$gstr" \
+-num-threads 4 \
+-output-path "$WDIR/output/$lang-f$sfid-100lb-gstr$gstr" \
 -encoding "LATIN1" 
 

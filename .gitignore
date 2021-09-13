@@ -1,4 +1,9 @@
+*.out
+
+
 bin/
 data/langs/*
 
 data/univmap/*
+
+data/graph/
