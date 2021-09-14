@@ -1,9 +1,13 @@
-export WDIR="/home/gridsan/tdn/pr-graph"
-export CLASSPATH="$WDIR/bin/:$WDIR/libs/optimization-2010.11.jar:$WDIR/libs/trove-2.0.2.jar:$WDIR/libs/args4j-2.0.10.jar"
+#!/bin/bash  
+#SBATCH --exclusive
+#SBATCH -o ../logs/run-graph.out-%j
 
-lang=$1
-lname=$2
-umap=$3
+WDIR="/home/gridsan/tdn/pr-graph"
+CLASSPATH="$WDIR/bin/:$WDIR/libs/optimization-2010.11.jar:$WDIR/libs/trove-2.0.2.jar:$WDIR/libs/args4j-2.0.10.jar"
+
+lang="english"
+lname="english-small-ptb"
+umap="ptb"
 
 java -cp $CLASSPATH -Xmx8000m programs.TestPosGraphBuilder  \
 -data-path "$WDIR/data/langs/$lang/$lname.train,$WDIR/data/langs/$lang/$lname.test" \
