@@ -4,7 +4,7 @@ import io
 import conllu
 
 if __name__ == "__main__":
-    f_name = "../data/langs/english/english_ptb_train.conll"
+    f_name = "../data/langs/english/english-ptb.train"
 
     file = open(f_name, "r", encoding="latin")
     all_data = file.read()
@@ -22,8 +22,8 @@ if __name__ == "__main__":
 
     # subset a small portion
     rng = default_rng(42)
-    s_indices = rng.choice(n_sentences, size=int(n_sentences/10), replace=False)
-    newf_name = "../data/langs/english/english_small_ptb_train.conll"
+    s_indices = rng.choice(n_sentences, size=int(n_sentences/100), replace=False)
+    newf_name = "../data/langs/english/english-tiny-ptb.train"
     new_file = open(newf_name, "w", encoding="latin")
     n_tokens_written = 0
     for i in s_indices:
